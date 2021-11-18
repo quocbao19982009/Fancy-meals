@@ -5,11 +5,20 @@ import CartItem from "./CartItem";
 import classes from "./Cart.module.css";
 import CartContext from "../../store/cart-context";
 import Checkout from "./Checkout";
+import { Link } from "react-router-dom";
+
+const today = new Date();
+const date =
+  today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
+const time =
+  today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+const dateTime = date + " " + time;
 
 const Cart = (props) => {
   const [isCheckout, setIsCheckout] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [didSubmit, setDidSubmit] = useState(false);
+  const [orderId, setOrderId] = useState("");
   const cartCtx = useContext(CartContext);
 
   const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
@@ -29,18 +38,24 @@ const Cart = (props) => {
 
   const submitOrderHandler = async (userData) => {
     setIsSubmitting(true);
-    await fetch(
+    const respone = await fetch(
       "https://react-testing-http-7f660-default-rtdb.europe-west1.firebasedatabase.app/orders.json",
       {
         method: "POST",
         body: JSON.stringify({
           user: userData,
           orderedItems: cartCtx.items,
+          total: cartCtx.totalAmount.toFixed(2),
+          createAt: dateTime,
         }),
       }
     );
+
+    const data = await respone.json();
     setIsSubmitting(false);
     setDidSubmit(true);
+    setOrderId(data.name);
+    console.log(data);
     cartCtx.clearCart();
   };
 
@@ -89,14 +104,21 @@ const Cart = (props) => {
   const isSubmittingModalContent = <p>Sending order data...</p>;
 
   const didSubmitModalContent = (
-    <React.Fragment>
+    <>
       <p>Successfully sent the order!</p>
+      <p>Your Order ID is: {orderId}</p>
+      <div>
+        Check Order's Detail{" "}
+        <Link className={classes.link} to={`/order/${orderId}`}>
+          Here
+        </Link>
+      </div>
       <div className={classes.actions}>
         <button className={classes.button} onClick={props.onClose}>
           Close
         </button>
       </div>
-    </React.Fragment>
+    </>
   );
 
   return (

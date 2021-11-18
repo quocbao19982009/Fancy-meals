@@ -1,13 +1,7 @@
 import Meals from "../components/Meals/Meals";
 
 function App() {
-  return (
-    <>
-      <main>
-        <Meals />
-      </main>
-    </>
-  );
+  return <Meals />;
 }
 
 export default App;

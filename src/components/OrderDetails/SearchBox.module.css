@@ -1,0 +1,51 @@
+.orderDetails {
+  max-width: 60rem;
+  width: 90%;
+  margin: 2rem auto;
+}
+
+.searchBoxContainer {
+  text-align: center;
+}
+
+.searchBox label {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+.searchBox input {
+  width: 70%;
+  height: 3rem;
+  font-size: 1.2rem;
+}
+
+.button {
+  margin: auto;
+  margin-top: 2rem;
+  cursor: pointer;
+  font: inherit;
+  border: none;
+  background-color: #4d1601;
+  color: white;
+  padding: 0.75rem 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.button a {
+  color: white;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #2c0d00;
+}
+
+.invalid input {
+  border: 1px solid red;
+}
+.invalid label {
+  color: red;
+}

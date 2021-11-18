@@ -1,0 +1,16 @@
+.orderDetailsContainer {
+  max-width: 60rem;
+  width: 90%;
+  margin: 2rem auto;
+  position: relative;
+  top: -200px;
+}
+
+.userInfo div {
+  font-size: 1.2rem;
+}
+.orderDetailsContainer h2 {
+  margin: 1rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.328);
+  padding-top: 1rem;
+}
