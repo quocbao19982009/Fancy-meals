@@ -17,13 +17,15 @@ const App = () => {
 
   return (
     <>
-      {cartIsShown && <Cart onClose={hideCartHandler} />}
-      <Header onShowCart={showCartHandler} />
-      <Routes>
-        <Route path="/" element={<OrderScreen />}></Route>
-        <Route path="/order/" element={<CheckOrderScreen />}></Route>
-        <Route path="/order/:id" element={<OrderDetailsScreen />}></Route>
-      </Routes>
+      <div className="body-container">
+        <Header onShowCart={showCartHandler} />
+        {cartIsShown && <Cart onClose={hideCartHandler} />}
+        <Routes>
+          <Route path="/" element={<OrderScreen />}></Route>
+          <Route path="/order/" element={<CheckOrderScreen />}></Route>
+          <Route path="/order/:id" element={<OrderDetailsScreen />}></Route>
+        </Routes>
+      </div>
     </>
   );
 };

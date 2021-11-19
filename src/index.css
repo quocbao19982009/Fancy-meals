@@ -9,8 +9,11 @@ html {
   font-family: "Noto Sans JP", sans-serif;
 }
 
-body {
+.body-container {
   margin: 0;
+  width: 100%;
+  min-height: 120vh;
   background-image: url("./assets/meal2.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
 }

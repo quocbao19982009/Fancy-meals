@@ -1,5 +1,6 @@
 .header {
-  position: fixed;
+  /* position: fixed; */
+  margin-bottom: 4rem;
   top: 0;
   left: 0;
   width: 100%;

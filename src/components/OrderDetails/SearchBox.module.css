@@ -3,6 +3,7 @@
   width: 90%;
   margin: 2rem auto;
   margin-top: 10rem;
+  animation: appear 1s ease-out forwards;
 }
 
 .searchBoxContainer {
@@ -49,4 +50,16 @@
 }
 .invalid label {
   color: red;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
