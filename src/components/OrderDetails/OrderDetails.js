@@ -39,7 +39,7 @@ const OrderDetails = () => {
     } catch (error) {
       throw new Error(error.message);
     }
-  }, []);
+  }, [orderId]);
 
   const orderDetailContent = (
     <>

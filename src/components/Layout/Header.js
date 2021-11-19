@@ -9,7 +9,7 @@ const Header = (props) => {
     <>
       <header className={classes.header}>
         <Link to="/" className={classes.logo}>
-          ReactMeals
+          FANCY MEALS
         </Link>
         <div className={classes.nav}>
           <Link to="/order/" className={classes.nav_link}>

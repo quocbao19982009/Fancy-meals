@@ -105,13 +105,15 @@ const Cart = (props) => {
 
   const didSubmitModalContent = (
     <>
-      <p>Successfully sent the order!</p>
-      <p>Your Order ID is: {orderId}</p>
-      <div>
-        Check Order's Detail{" "}
-        <Link className={classes.link} to={`/order/${orderId}`}>
-          Here
-        </Link>
+      <div className={classes.userId}>
+        <p>Successfully sent the order!</p>
+        <p>Your Order ID is: "{orderId}"</p>
+        <div>
+          Check Order's Detail{" "}
+          <Link className={classes.link} to={`/order/${orderId}`}>
+            Here
+          </Link>
+        </div>
       </div>
       <div className={classes.actions}>
         <button className={classes.button} onClick={props.onClose}>

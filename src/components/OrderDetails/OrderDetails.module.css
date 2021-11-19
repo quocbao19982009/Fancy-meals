@@ -5,12 +5,25 @@
   position: relative;
   top: -200px;
 }
+.orderDetailsContainer h2 {
+  margin: 1rem 0;
+  /* border-top: 1px solid rgba(0, 0, 0, 0.328); */
+  padding-top: 1rem;
+}
 
 .userInfo div {
   font-size: 1.2rem;
+  line-height: 2rem;
 }
-.orderDetailsContainer h2 {
-  margin: 1rem 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.328);
-  padding-top: 1rem;
+
+.orderDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* flex-direction: row; */
+  /* width: 100%; */
+  /* justify-content: space-evenly; */
+  /* border: 1px solid red; */
+}
+
+.orderItems {
 }
