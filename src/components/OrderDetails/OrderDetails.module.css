@@ -2,12 +2,10 @@
   max-width: 60rem;
   width: 90%;
   margin: 2rem auto;
-  position: relative;
-  top: -200px;
+  margin-top: 10rem;
 }
 .orderDetailsContainer h2 {
   margin: 1rem 0;
-  /* border-top: 1px solid rgba(0, 0, 0, 0.328); */
   padding-top: 1rem;
 }
 
@@ -19,11 +17,4 @@
 .orderDetails {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* flex-direction: row; */
-  /* width: 100%; */
-  /* justify-content: space-evenly; */
-  /* border: 1px solid red; */
-}
-
-.orderItems {
 }
