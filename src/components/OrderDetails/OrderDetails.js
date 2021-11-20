@@ -18,8 +18,6 @@ const OrderDetails = () => {
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  console.log(order);
-  console.log(orderId);
 
   useEffect(() => {
     const fetchOrder = async () => {
