@@ -3,12 +3,14 @@ import { useParams } from "react-router";
 import Card from "../UI/Card";
 import ItemsTable from "./ItemsTable";
 import classes from "./OrderDetails.module.css";
+import { useNavigate } from "react-router-dom";
 
 const OrderDetails = () => {
   const params = useParams();
   const orderId = params.id;
-
+  const navigate = useNavigate();
   const [order, setOrder] = useState({});
+  const [orderNotFound, setOrderNotFound] = useState(false);
   const {
     createAt = "",
     total = "",
@@ -26,14 +28,21 @@ const OrderDetails = () => {
         `https://react-testing-http-7f660-default-rtdb.europe-west1.firebasedatabase.app/orders/${orderId}.json`
       );
       if (respone === null) {
+        console.log(respone);
         setError("Cannot Find Order");
       }
       const data = await respone.json();
+      if (data === null) {
+        setOrderNotFound(true);
+        setLoading(false);
+        return;
+      }
       setOrder(data);
       setLoading(false);
     };
     try {
       fetchOrder();
+      console.log("its go here");
     } catch (error) {
       throw new Error(error.message);
     }
@@ -68,12 +77,20 @@ const OrderDetails = () => {
       </div>
     </>
   );
+
+  const orderNotFoundContent = (
+    <div className={classes.orderNotFound}>
+      <p>Order Not Found</p>
+      <button onClick={() => navigate("/order")}>Try Again</button>
+    </div>
+  );
   return (
     <>
       <div className={classes.orderDetailsContainer}>
         <Card>
           {loading && <p style={{ textAlign: "center" }}>Loading...</p>}
-          {!loading && orderDetailContent}
+          {orderNotFound && !loading && orderNotFoundContent}
+          {!orderNotFound && !loading && orderDetailContent}
         </Card>
       </div>
     </>
