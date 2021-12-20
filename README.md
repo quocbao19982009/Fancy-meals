@@ -1,8 +1,14 @@
 # Fancy-meals
 
+<img src="https://github.com/quocbao19982009/Fancy-meals/blob/master/Fancy%20Meal.png" alt="fancy meal" />
+
+## General Information
+
 This is a simple shop with ordering function and check order
 
-Live: https://fancy-meals.web.app/
+Demo: https://fancy-meals.web.app/
+
+This is a pratice project.
 
 ## Technologies
 
