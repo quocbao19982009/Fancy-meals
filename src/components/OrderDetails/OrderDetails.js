@@ -25,7 +25,7 @@ const OrderDetails = () => {
     const fetchOrder = async () => {
       setLoading(true);
       const respone = await fetch(
-        `https://react-testing-http-7f660-default-rtdb.europe-west1.firebasedatabase.app/orders/${orderId}.json`
+        `https://fancy-meals-default-rtdb.europe-west1.firebasedatabase.app/orders/${orderId}.json`
       );
       if (respone === null) {
         console.log(respone);
